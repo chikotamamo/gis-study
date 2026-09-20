@@ -1,0 +1,32 @@
+# 软件安装目录（QGIS / CloudCompare / PostGIS，约 3.4 GB，不进 Git）
+app/
+
+# 安装包与压缩包
+*.exe
+*.msi
+*.zip
+*.7z
+*.rar
+
+# 大体积地理数据（要提交小样例时用 git add -f 强制添加）
+*.tif
+*.tiff
+*.img
+*.las
+*.laz
+
+# Python 与 Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.pytest_cache/
+
+# Windows 与编辑器杂项
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+.vscode/*
+!.vscode/settings.json
