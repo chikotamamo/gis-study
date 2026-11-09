@@ -4,7 +4,7 @@ from pathlib import Path
 
 aoi = gpd.GeoDataFrame(
   {"name":["Enshi_area"]},
-  geometry=[box(220452.41,3209210.97,482901.30,3487908.00)],
+  geometry=[box(220452.41,3279210.97,402901.30,3437908.00)],
   crs="EPSG:32649"
 )
 
