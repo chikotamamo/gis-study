@@ -1,3 +1,10 @@
+'''
+此步骤也是对影相进行预处理
+通过规定统一的研究区坐标参考系和研究区范围
+将目标影像处理到统一的研究区和规定的像元格网中
+transform	-------这张栅格的左上角在哪、像元多大、有没有旋转？
+width/height	---有多少行多少列？
+'''
 import geopandas as gpd
 import numpy as np
 from rasterio.transform import from_origin
