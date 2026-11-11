@@ -29,12 +29,12 @@ cloud_pct = 40
 composite = "median"               # "single" 单景 / "median" 时间中值合成
 scale_in_gee = True
 
-test_mode = True
+test_mode = False
 test_size_km = 20
 
 prefer_direct = True
 drive_folder = "gee_export"  #导出文件放 Drive 哪个目录，不存在会自动建  
-prefix = "enshi_LC09_B45"    #文件名前缀	输出文件叫 <prefix>.tif，也是 Tasks 里的任务名
+prefix = "enshi_LC09_B45_FULL"    #文件名前缀	输出文件叫 <prefix>.tif，也是 Tasks 里的任务名
 
 mask_bits = 62
 max_pixels = 1e10
@@ -71,7 +71,7 @@ def build_image(region):
     image = clear(col.sort("CLOUD_COVER").first()).select(bands)
   if scale_in_gee:
     image = image.multiply(0.0000275).add(-0.2)
-  return image
+  return image.toFloat()   # ← 64 位 → 32 位，体积减半,对图像影响不大
 
 def to_region(bbox):
   """把 UTM 矩形转成 GEE 的经纬度多边形。
